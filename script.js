@@ -97,6 +97,7 @@ function generateRandom({
 generatePassword.addEventListener("click", function () {
   const passwordLength = +document.getElementById("passwordLength").value;
   newPassword.removeAttribute("readonly");
+  generatePassword.style.backgroundColor = "rgb(21, 176, 21)";
   newPassword.value = generateRandom({
     length: passwordLength,
     numbers: numberInput.checked,
@@ -105,6 +106,9 @@ generatePassword.addEventListener("click", function () {
     uppercase: upperInput.checked,
   });
 });
+copyPassword.addEventListener('click', function(){
+  copyPassword.style.backgroundColor = 'yellow'
+})
 function autoSelectHandler() {
   if (autoSelect.checked) {
     newPassword.removeAttribute("readonly");
@@ -117,3 +121,4 @@ const copyContent = () => {
   newPassword.select();
   navigator.clipboard.writeText(newPassword.value);
 };
+
