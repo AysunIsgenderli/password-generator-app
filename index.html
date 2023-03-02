@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        max-width: 50%;
+      }
+      .form-item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      .form-item p {
+        width: 30%;
+      }
+      .form-item div {
+        width: 60%;
+      }
+      .input-password {
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      <div class="form-item">
+        <p>Password Length:</p>
+        <div id="lengthContainer">
+          <select name="" id="passwordLength">
+            <!-- <option value="">16</option> -->
+          </select>
+        </div>
+      </div>
+      <div class="form-item">
+        <p>Include Symbols:</p>
+        <div>
+          <input type="checkbox" name="" id="symbols" />
+          <label for="symbols">( e.g. @#$% )</label>
+        </div>
+      </div>
+      <div class="form-item">
+        <p>Include Numbers:</p>
+        <div>
+          <input type="checkbox" name="" id="numberInput" />
+          <label for="numberInput">( e.g. 123456 )</label>
+        </div>
+      </div>
+      <div class="form-item">
+        <p>Include Lowercase Characters:</p>
+        <div>
+          <input type="checkbox" name="" id="lowerInput" />
+          <label for="lowerInput">( e.g. abcdefgh )</label>
+        </div>
+      </div>
+      <div class="form-item">
+        <p>Include Uppercase Characters:</p>
+        <div>
+          <input type="checkbox" name="" id="upperInput" />
+          <label for="upperInput">( e.g. ABCDEFGH )</label>
+        </div>
+      </div>
+      <div class="form-item">
+        <p>Auto-Select:</p>
+        <div>
+          <input
+            type="checkbox"
+            name=""
+            id="auto-select"
+            onclick="autoSelectHandler()" />
+          <label for="auto-select">( select the password automatically )</label>
+        </div>
+      </div>
+      <div class="form-item">
+        <button id="generatePassword">Generate password</button>
+        <button id="copy" onclick="copyContent()">Copy</button>
+        <button id="advanced">Advanced(Free)</button>
+      </div>
+      <div class="form-item">
+        <p>Your New Password:</p>
+        <div>
+          <input
+            class="input-password"
+            type="text"
+            name=""
+            id="newPassword"
+            value=""
+            readonly
+            placeholder="Your new password will appear here." />
+          <button onclick="copyContent()">Copy</button>
+        </div>
+      </div>
+    </form>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
