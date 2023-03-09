@@ -35,13 +35,13 @@ function getPassword() {
   unbelievablePassword.setAttribute("label", "some value");
   unbelievablePassword.label = "Unbelievable";
 
-  // for(let i = 256; i<=2048; i++){
-  //     unbelievablePassword.appendChild(new Option(total))
-  // }
+  for(let i = 256; i<=2048; i*=2){
+      unbelievablePassword.appendChild(new Option(i))
+  }
 
   demo.appendChild(weakPassword);
   demo.appendChild(strongPassword);
-  //   demo.appendChild(unbelievablePassword)
+    demo.appendChild(unbelievablePassword)
 }
 getPassword();
 
@@ -86,7 +86,6 @@ function generateRandom({
       Math.random() * characters[selectedUsableCharacters].length
     );
     // randomCharacterIndex = 3
-    // characters.numbers[3]  characters[selectedUsableCharacters]
     const pickOne = characters[selectedUsableCharacters][randomCharacterIndex];
     generatedPassword += pickOne;
   }
